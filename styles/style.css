@@ -1,0 +1,33 @@
+@import "/styles/colors.css";
+@import "/styles/reset.css";
+.page-wrapper {
+}
+.header {
+}
+.nav {
+}
+.nav-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 13.5px;
+    padding-bottom: 14.5px;
+    background: var(--main-black);
+    
+}
+.nav-top-call {
+    display:flex;
+    align-items: center;
+    column-gap: 20px;
+    color: var(--main-white);
+    
+}
+.nav-top-call-icon {
+}
+.nav-top-call-request {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.nav-top-daysWork {
+    color: var(--main-white);
+}
