@@ -164,39 +164,4 @@
     top:300px;
     width: 650px;
 }
-
-.product1{
-    background: url(/src/img/Dunk.png) no-repeat right/1000px 700px;
-    height: 840px;
-    width: 100%;
-}
-.product2{
-    background: url(/src/img/AirVapormax.png) no-repeat right/1000px 700px;
-    height: 840px;
-    width: 100%;
-}
-.product3{
-    background: url(/src/img/Blazer.png) no-repeat right/1000px 700px;
-    height: 840px;
-    width: 100%;
-}
-.product4{
-    background: url(/src/img/Jordan1RetroMidHigh.png) no-repeat right/1000px 700px;
-    height: 840px;
-    width: 100%;
-}
-.product5{
-    background: url(/src/img/AirForce.png) no-repeat right/1000px 700px;
-    height: 840px;
-    width: 100%;
-}
-.product6{
-    background: url(/src/img/Jordan1RetroLow.png) no-repeat right/1000px 700px;
-    height: 840px;
-    width: 100%;
-}
-.product7{
-    background: url(/src/img/Jordan4Retro.png) no-repeat right/1000px 700px;
-    height: 840px;
-    width: 100%;
-}
+/* Started block product */
