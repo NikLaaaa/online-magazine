@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/styles/product.css">
 </head>
+
 <body>
     <div class="CategoryOfShoes">
-
     </div>
-    <script src="script.js"></script>
+    <div class="categoryModal">
+        <div class="categoryModal-content">
+            <span class="categoryModal-content-close">x</span>
+            <img src="" alt="" class="categoryModal-content-product">
+            <h4 class="categoryModal-content-name"></h4>
+            <label for="shoe-size">Виберіть розмір кросівок:</label>
+            <select id="shoe-size" name="shoe-size">
+            </select>
+            <p class="categoryModal-content-price"></p>
+            <button class="categoryModal-content-buy">Buy</button>
+        </div>
+    </div>
+    <script src="product.js"></script>
 </body>
+
 </html>
