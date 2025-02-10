@@ -15,12 +15,51 @@ body {
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-
+/* styles burger */
+.nav-hidden{
+  z-index: 5;
+  background: black;
+  position:fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  translate: -100% 0%;
+  transition: all .5s;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav-active{
+  translate: -50% 0%;
+}
 .page-wrapper {
+}
+.nav-hidden-list li{
+  color: white;
 }
 .header {
 }
 .nav {
+  position:relative;
+}
+.burger{
+  display: none;
+  flex-direction: column;
+  row-gap: 8px;
+  width:50px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 4;
+  right: 20px;
+  bottom: 0px;
+}
+.burger-line{
+  transition: all .4s;
+  cursor: pointer;
+  background: red;
+  height: 4px;
+  width: 100%;
 }
 .nav-top {
     display: flex;
@@ -197,6 +236,10 @@ body {
     height: 840px;
     width: 100%;
 }
+.imgnike-logo{
+  display: none;
+
+}
 .img-nike-title {
     font-family: 'Poppins', sans-serif;
     font-size:54px;
@@ -289,6 +332,59 @@ body {
   background: #cc0000;
 }
 
-
-
+@media (max-width:1682px){
+  .imgnike{
+    background-size: 700px 650px;
+  }
+  .imgnike-block{
+    top: 67px;
+  }
+}
+@media (max-width:1024px) {
+  .nav-bottom-categories{
+    column-gap:48px;
+  }
+  .imgnike-block{
+    position: static;
+  }
+  .imgnike{
+    padding-left: 120px;
+    margin-top: 50px;
+    height: unset;
+    padding-bottom: 456px;
+    
+  }
+  .img-nike-title{
+    font-size: 36px;
+    margin-bottom: 26px;
+  }
+  .nav-bottom-categories{
+    justify-content: flex-start;
+    column-gap: 30px;
+    padding-left: 120px;
+  }
+  
+}
+@media (max-width:768px) {
+  .nav-bottom-categories{
+    display: none;
+  }
+  .burger{
+    display:flex;
+  }
+  .imgnike-block{
+    width: unset;
+  }
+  .imgnike{
+    padding: 20px;
+    background: unset;
+    position:relative;
+  }
+  .imgnike-logo{
+    display: block;
+    width: 84%;
+    position: absolute;
+    bottom: -192px;
+  }
+}
 
