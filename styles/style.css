@@ -15,7 +15,6 @@ body {
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-/* styles burger */
 .nav-hidden{
   z-index: 5;
   background: black;
@@ -35,9 +34,28 @@ body {
 }
 .page-wrapper {
 }
-.nav-hidden-list li{
+.nav-hidden-list li {
+  font-family: 'Montserrat', sans-serif;
   color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  text-align: center;
 }
+
+.nav-hidden-list li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+
+.nav-hidden-list li:active {
+  transform: scale(0.95);
+}
+
 .header {
 }
 .nav {
