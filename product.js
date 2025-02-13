@@ -41,3 +41,42 @@ sizesProduct.forEach(function (element, index) {
     option.textContent = element
     categoryVariables.shoeSize.append(option)
 })
+
+
+const navBottomCenterSearch = document.querySelector(".nav-bottom-center-search")
+const searchInfo = document.querySelector('.search-data')
+const search = _.debounce(function (event) {
+    
+    searchInfo.classList.add('show-search-data')
+    let searchData = navBottomCenterSearch.value
+    nameOfProducts.forEach(function (element, index) {
+        
+        if(navBottomCenterSearch.value == ''){
+            console.log(navBottomCenterSearch.value)
+            searchInfo.innerHTML = ''
+        }
+        else if (element.startsWith(searchData)) {
+            searchInfo.innerHTML += `
+                <p class="search-propose"> ${element} </p>
+                `
+        }
+    })
+}, 1000);
+
+
+navBottomCenterSearch.addEventListener('input', search)
+const searchPropose = document.querySelector(".search-propose")
+
+searchPropose.forEach(function(element,index){
+element.addEventListener("click",()=>{
+    searchInfo.classList.add('show-search-data')
+    searchInfo.innerHTML = ''
+        CategoryOfShoes.innerHTML += `
+            <div class="CategoryOfShoes-item">
+                <img src="/src/img/product-${index + 1}.png" alt="" class="CategoryOfShoes-item-product">
+                <p class="CategoryOfShoes-item-name">${element}</p>
+                <p class="CategoryOfShoes-item-price">${pricesProduct[index]}</p>
+            </div>
+        `
+    })
+})

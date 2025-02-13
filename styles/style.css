@@ -349,6 +349,36 @@ body {
 .about-button:hover {
   background: #cc0000;
 }
+.nav-bottom-center{
+  position: relative;
+  z-index: 1;
+}
+.search-data{
+  padding: 4px;
+  border-radius: 20px;
+  background:rgb(255, 255, 255);
+  border: 2px solid gainsboro;
+  position: absolute;
+  width: 100%;
+  transition: all .3s;
+  top: 75px;
+  translate: -200% 0;
+  z-index: 2;
+}
+.show-search-data{
+  translate: 0% 0%;
+}
+.search-propose{
+  cursor: pointer;
+  font-size: 22px;
+  margin: 4px 0px;
+  transition: all .5s;
+  padding: 4px;
+}
+.search-propose:hover{
+  background: black;
+  color: white;
+}
 
 @media (max-width:1682px){
   .imgnike{
