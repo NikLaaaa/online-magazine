@@ -224,7 +224,6 @@ body {
     background: white;
     display: flex;
     flex-direction: column;
-    width: 20%;
 }
 
 .modal-delivery-title,.modal-about-title{
@@ -299,12 +298,11 @@ body {
 
 .about-container {
   background: #fff;
-  padding: 40px;
+  padding: 10px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   max-width: 700px;
-  margin: 50px auto;
 }
 
 .about-title {
@@ -379,7 +377,47 @@ body {
   background: black;
   color: white;
 }
-
+.Request-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.61);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 0;
+  transition: all .3s;
+}
+.Request-modal-form {
+  position: relative;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  row-gap: 6px;
+}
+.Request-modal-form-label {
+}
+.Request-modal-form-field {
+  border-bottom: 2px solid gainsboro;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 24px;
+}
+.Request-modal-form-call {
+}
+.Request-modal-form-send {
+}
+.Request-modal-close{
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 24px;
+  cursor: pointer;
+}
 @media (max-width:1682px){
   .imgnike{
     background-size: 700px 650px;
@@ -414,6 +452,11 @@ body {
   
 }
 @media (max-width:768px) {
+  .modal-about .modal-delivery{
+    overflow-y: scroll;
+    width: 60%;
+    max-height: 80%;
+  }
   .nav-bottom-categories{
     display: none;
   }
@@ -435,4 +478,5 @@ body {
     bottom: -192px;
   }
 }
+
 

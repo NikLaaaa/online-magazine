@@ -7,6 +7,16 @@ const modalDeliveryClose = document.querySelector('.modal-delivery-close')
 const burger = document.querySelector(".burger")
 const navHidden = document.querySelector(".nav-hidden")
 const burgerLine = document.querySelectorAll(".burger-line")
+const requestModal = document.querySelector(".Request-modal")
+const navTopCallRequest = document.querySelector(".nav-top-call-request")
+const RequestModalClose = document.querySelector(".Request-modal-close")
+
+navTopCallRequest.addEventListener("click",function(){
+    requestModal.style.scale = "1"
+})
+RequestModalClose.addEventListener("click",function(){
+    requestModal.style.scale = "0"
+})
 let burgerCount = 1
 burger.addEventListener("click",()=>{
     burgerCount ++
@@ -40,3 +50,29 @@ modalDeliveryClose.addEventListener('click',()=>{
 modalAboutClose.addEventListener('click',()=>{
     showOrHiddenModal(aboutOverlay)
 })
+
+
+var modal = document.getElementById("CallRequestModal");
+var btn = document.getElementById("callRequestBtn");
+var span = document.getElementsByClassName("modal-call-request close")[0];
+
+// Когда пользователь нажимает на кнопку, показываем модальное окно
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Когда пользователь нажимает на (x), закрываем модальное окно
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Когда пользователь кликает вне модального окна, закрываем его
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+

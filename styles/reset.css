@@ -18,3 +18,8 @@ input{
     border:none;
     background:unset;
 }
+input:focus-visible{
+    fill: black;
+    border-color: black;
+    outline: unset;
+}
