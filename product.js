@@ -1,6 +1,23 @@
 const nameOfProducts = ['Dunk', 'Air Vapormax', 'Blazer', 'Jordan 1 Retro Mid/High', 'Air Force', 'Jordan 1 Retro Low', 'Jordan 4 Retro'];
 const pricesProduct = ['3000 грн', '4000 грн', '3900 грн', '3500 грн', '4200 грн', '4400 грн', '3700 грн'];
 const sizesProduct = ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45"];
+const delivery = document.querySelector('.delivery')
+const about = document.querySelector('.about')
+const modalDeliveryClose = document.querySelector('.modal-delivery-close')
+const modalAboutClose = document.querySelector('.modal-about-close')
+
+about.addEventListener('click',function(){
+    document.querySelector('.about-overlay').classList.add('show-overlay')
+})
+delivery.addEventListener('click',function(){
+    document.querySelector('.delivery-overlay').classList.add('show-overlay')
+})
+modalDeliveryClose.addEventListener('click',function(){
+    document.querySelector('.delivery-overlay').classList.remove('show-overlay')
+})
+modalAboutClose.addEventListener('click',function(){
+    document.querySelector('.about-overlay').classList.remove('show-overlay')
+})
 
 
 const CategoryOfShoes = document.querySelector(".CategoryOfShoes");

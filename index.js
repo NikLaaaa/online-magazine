@@ -51,7 +51,6 @@ modalAboutClose.addEventListener('click',()=>{
     showOrHiddenModal(aboutOverlay)
 })
 
-
 var modal = document.getElementById("CallRequestModal");
 var btn = document.getElementById("callRequestBtn");
 var span = document.getElementsByClassName("modal-call-request close")[0];
@@ -73,6 +72,4 @@ window.onclick = function(event) {
   }
 }
 
-
-
-
+// class="about-overlay + show-overlay"
