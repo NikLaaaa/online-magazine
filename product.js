@@ -5,6 +5,18 @@ const delivery = document.querySelector('.delivery')
 const about = document.querySelector('.about')
 const modalDeliveryClose = document.querySelector('.modal-delivery-close')
 const modalAboutClose = document.querySelector('.modal-about-close')
+// start modal func for hidden about and delivery
+const aboutHidden = document.querySelector('.about-hidden')
+const deliveryHidden = document.querySelector('.delivery-hidden')
+const burgerProduct = document.querySelector(".burger-product")
+const navHiddenProduct = document.querySelector(".nav-hidden-product")
+const burgerLineHidden = document.querySelectorAll(".burger-line-hidden")
+aboutHidden.addEventListener('click',function(){
+    document.querySelector('.about-overlay').classList.add('show-overlay')
+})
+deliveryHidden.addEventListener('click',function(){
+    document.querySelector('.delivery-overlay').classList.add('show-overlay')
+})
 
 about.addEventListener('click',function(){
     document.querySelector('.about-overlay').classList.add('show-overlay')
@@ -124,3 +136,22 @@ function enterSearchData() {
         });
     });
 }
+
+// burger 
+let hiddenBurgerCount = 1
+burgerProduct.addEventListener("click",()=>{
+    hiddenBurgerCount ++
+    navHiddenProduct.classList.toggle("nav-active")
+    if(hiddenBurgerCount%2==0){
+        burgerLineHidden[1].style.display = "none"
+        burgerLineHidden[0].style.rotate = "-45deg"
+        burgerLineHidden[2].style.rotate = "45deg"
+        burgerLineHidden[2].style.marginTop = "-12px"
+    }
+    else{
+        burgerLineHidden[1].style.display = "block"
+        burgerLineHidden[0].style.rotate = "0deg"
+        burgerLineHidden[2].style.rotate = "0deg"
+        burgerLineHidden[2].style.marginTop = "0px"
+    }
+})
