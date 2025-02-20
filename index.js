@@ -1,9 +1,16 @@
 const delivery = document.querySelector('.delivery')
 const about = document.querySelector('.about')
-const deliveryOverlay = document.querySelector('.delivery-overlay')
-const aboutOverlay = document.querySelector('.about-overlay')
 const modalAboutClose = document.querySelector('.modal-about-close')
 const modalDeliveryClose = document.querySelector('.modal-delivery-close')
+
+
+const deliveryIndex = document.querySelector('.delivery-index')
+const aboutIndex = document.querySelector('.about-index')
+const closeIndexAbout = document.querySelector('.close-index-about')
+const closeIndexDelivery = document.querySelector('.close-index-delivery')
+
+const deliveryOverlay = document.querySelector('.delivery-overlay')
+const aboutOverlay = document.querySelector('.about-overlay')
 const burger = document.querySelector(".burger")
 const navHidden = document.querySelector(".nav-hidden")
 const burgerLine = document.querySelectorAll(".burger-line")
@@ -45,12 +52,26 @@ about.addEventListener('click',()=>{
     showOrHiddenModal(aboutOverlay)
 })
 modalDeliveryClose.addEventListener('click',()=>{
-    showOrHiddenModal(deliveryOverlay)
+    deliveryOverlay.classList.add('show-overlayd')
 })
 modalAboutClose.addEventListener('click',()=>{
+    aboutOverlay.classList.add('show-overlayd')
+})
+// /////////////
+deliveryIndex.addEventListener('click',()=>{
+    showOrHiddenModal(deliveryOverlay)
+})
+aboutIndex.addEventListener('click',()=>{
     showOrHiddenModal(aboutOverlay)
 })
+closeIndexDelivery.addEventListener('click',()=>{
+    deliveryOverlay.classList.add('show-overlayd')
+})
+closeIndexAbout.addEventListener('click',()=>{
+    aboutOverlay.classList.add('show-overlayd')
+})
 
+////////////////
 
 var modal = document.getElementById("CallRequestModal");
 var btn = document.getElementById("callRequestBtn");
@@ -73,6 +94,4 @@ window.onclick = function(event) {
   }
 }
 
-
-
-
+// class="about-overlay + show-overlay"
