@@ -104,6 +104,10 @@ body {
     text-decoration: underline;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+    transition: all .4s;
+}
+.nav-top-call-request:hover {
+  scale: 1.1;
 }
 .nav-top-daysWork {
     color: var(--main-white);
@@ -192,6 +196,24 @@ body {
     
 .nav-bottom-categories-item {
     cursor:pointer;
+    position: relative;
+}
+.nav-bottom-categories-item::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  opacity: 0;
+  height: 2px;
+  background: black;
+  bottom: -10px;
+  left: 0;
+  transition: all .5s;
+}
+
+.nav-bottom-categories-item:hover::after {
+  width: 100%;
+  opacity: 1;
+
 }
 
 .about-overlay,.delivery-overlay {

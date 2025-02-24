@@ -18,6 +18,23 @@ const requestModal = document.querySelector(".Request-modal")
 const navTopCallRequest = document.querySelector(".nav-top-call-request")
 const RequestModalClose = document.querySelector(".Request-modal-close")
 
+// start block modal
+
+const descAboutClose = document.querySelector(".desc-about-close")
+const descAboutOverlay = document.querySelector(".desc-about-overlay")
+
+const descDeliveryClose = document.querySelector(".desc-delivery-close")
+const descDeliveryOverlay = document.querySelector(".desc-delivery-overlay")
+
+
+//end block modal
+descAboutClose.addEventListener("click",function(){
+    descAboutOverlay.classList.remove("show-overlay")
+})
+//end block modal
+descDeliveryClose.addEventListener("click",function(){
+    descDeliveryOverlay.classList.remove("show-overlay")
+})
 navTopCallRequest.addEventListener("click",function(){
     requestModal.style.scale = "1"
 })
