@@ -11,11 +11,23 @@ const deliveryHidden = document.querySelector('.delivery-hidden')
 const burgerProduct = document.querySelector(".burger-product")
 const navHiddenProduct = document.querySelector(".nav-hidden-product")
 const burgerLineHidden = document.querySelectorAll(".burger-line-hidden")
+
+const productRequest = document.querySelector('.product-request')
+const productRequestModal = document.querySelector('.product-request-modal')
+const productRequestClose = document.querySelector(".product-request-close")
+productRequestClose.addEventListener("click",function(){
+    productRequestModal.style.scale = "0"
+})
+productRequest.addEventListener("click",function(){
+    productRequestModal.style.scale = "1"
+})
 aboutHidden.addEventListener('click',function(){
     document.querySelector('.about-overlay').classList.add('show-overlay')
+    navHiddenProduct.classList.remove("nav-active")
 })
 deliveryHidden.addEventListener('click',function(){
     document.querySelector('.delivery-overlay').classList.add('show-overlay')
+    navHiddenProduct.classList.remove("nav-active")
 })
 
 about.addEventListener('click',function(){

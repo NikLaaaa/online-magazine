@@ -15,6 +15,17 @@ body {
     from { opacity: 0; }
     to   { opacity: 1; }
   }
+
+  label {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
 .nav-hidden{
   z-index: 5;
   background: black;

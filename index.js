@@ -30,6 +30,7 @@ const descDeliveryOverlay = document.querySelector(".desc-delivery-overlay")
 //end block modal
 descAboutClose.addEventListener("click",function(){
     descAboutOverlay.classList.remove("show-overlay")
+
 })
 //end block modal
 descDeliveryClose.addEventListener("click",function(){
@@ -77,9 +78,11 @@ modalAboutClose.addEventListener('click',()=>{
 // /////////////
 deliveryIndex.addEventListener('click',()=>{
     showOrHiddenModal(deliveryOverlay)
+    navHidden.classList.remove("nav-active")
 })
 aboutIndex.addEventListener('click',()=>{
     showOrHiddenModal(aboutOverlay)
+    navHidden.classList.remove("nav-active")
 })
 closeIndexDelivery.addEventListener('click',()=>{
     deliveryOverlay.classList.add('show-overlayd')
