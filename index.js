@@ -9,6 +9,16 @@ const translations = {
         delivery: "Доставка",
         aboutGuarantee: "💥 Гарантія якості, доступні ціни, швидка доставка!",
         aboutTitle: "Про нас",
+        requestModal: {
+            nameLabel: "Введіть ваше ім'я",
+            phoneLabel: "Введіть ваш номер телефону",
+            callText: "Ми вам зателефонуємо протягом цього дня",
+            sendButton: "Залишити заявку"
+        },
+        footer: {
+            author: "NikLaStore",
+            rights: "© 2025 NikLaStore. Всі права захищені."
+        },
         aboutDescription: `Магазин стильних кросівок Nike – це місце, де якість, комфорт і сучасний дизайн 
         поєднуються в ідеальній гармонії. Ми пропонуємо широкий вибір 
         оригінальних кросівок Nike для тих, хто цінує активний спосіб життя, стиль і надійність.`,
@@ -34,6 +44,16 @@ const translations = {
         delivery: "Delivery",
         aboutGuarantee: "💥 Quality guarantee, affordable prices, fast delivery!",
         aboutTitle: "About Us",
+        requestModal: {
+            nameLabel: "Enter your name",
+            phoneLabel: "Enter your phone number",
+            callText: "We will call you back during the day",
+            sendButton: "Submit Request"
+        },
+        footer: {
+            author: "NikLaStore",
+            rights: "© 2025 NikLaStore. All rights reserved."
+        },
         aboutDescription: `The Nike sneaker store is a place where quality, comfort, and modern design 
         come together in perfect harmony. We offer a wide selection of 
         original Nike sneakers for those who appreciate an active lifestyle, style, and reliability.`,
@@ -195,7 +215,14 @@ const aboutDescription = document.querySelectorAll(".about-description")
 
 const aboutGuarantee = document.querySelector('.about-guarantee')
 
-const aboutButton = document.querySelector(".aboutButton")
+const aboutButton = document.querySelector(".about-button")
+
+const modalDeliveryTitle = document.querySelector(".modal-delivery-title")
+
+const modalDeliveryNova = document.querySelector(".modal-delivery-nova")
+
+const modalDeliveryPayment = document.querySelector(".modal-delivery-payment")
+
 
 
 en.addEventListener("click",function(){
@@ -212,6 +239,10 @@ en.addEventListener("click",function(){
     aboutDescription[1].textContent = translations.en.aboutDescription
     aboutGuarantee.textContent = translations.en.aboutGuarantee
     aboutButton.textContent = translations.en.aboutButton
+    modalDeliveryTitle.textContent = translations.en.deliveryTitle
+    modalDeliveryNova.textContent = translations.en.deliveryName
+    modalDeliveryPayment.textContent = translations.en.paymentTitle
+
     
 })
 ua.addEventListener("click",function(){
@@ -228,6 +259,8 @@ ua.addEventListener("click",function(){
     aboutDescription[1].textContent = translations.ua.aboutDescription
     aboutGuarantee.textContent = translations.ua.aboutGuarantee
     aboutButton.textContent = translations.ua.aboutButton
+    modalDeliveryTitle.textContent = translations.ua.deliveryTitle
+    modalDeliveryNova.textContent = translations.ua.deliveryName
 
 
 })
