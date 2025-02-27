@@ -1,3 +1,70 @@
+const translations = {
+    ua: {
+        callRequest: "Замовити дзвінок",
+        workHours: "з 10:00 до 22:00 сім днів на тиждень",
+        searchPlaceholder: "пошук",
+        home: "Головна",
+        allProducts: "Всі товари",
+        about: "Про нас",
+        delivery: "Доставка",
+        aboutGuarantee: "💥 Гарантія якості, доступні ціни, швидка доставка!",
+        aboutTitle: "Про нас",
+        aboutDescription: `Магазин стильних кросівок Nike – це місце, де якість, комфорт і сучасний дизайн 
+        поєднуються в ідеальній гармонії. Ми пропонуємо широкий вибір 
+        оригінальних кросівок Nike для тих, хто цінує активний спосіб життя, стиль і надійність.`,
+        aboutButton: "Замовити зараз",
+        deliveryTitle: "🚚 Доставка",
+        deliveryName: "📦 Самовивіз з Нової Пошти",
+        paymentTitle: "💳Оплата",
+        paymentOptions: [
+            "✅Повна оплата на карту",
+            "💰Оплата при отримані на Новій Пошті",
+            "💳Передоплата на карту і доплата на пошті"
+        ],
+        nikeTitle: "Поринь у світ Nike, відкриваючи всю колекцію",
+        catalogBtn: "Перейти до каталогу"
+    },
+    en: {
+        callRequest: "Request a Call",
+        workHours: "from 10:00 to 22:00 seven days a week",
+        searchPlaceholder: "search",
+        home: "Home",
+        allProducts: "All Products",
+        about: "About Us",
+        delivery: "Delivery",
+        aboutGuarantee: "💥 Quality guarantee, affordable prices, fast delivery!",
+        aboutTitle: "About Us",
+        aboutDescription: `The Nike sneaker store is a place where quality, comfort, and modern design 
+        come together in perfect harmony. We offer a wide selection of 
+        original Nike sneakers for those who appreciate an active lifestyle, style, and reliability.`,
+        aboutButton: "Order Now",
+        deliveryTitle: "🚚 Delivery",
+        deliveryName: "📦 Pickup from Nova Poshta",
+        paymentTitle: "💳 Payment",
+        paymentOptions: [
+            "✅ Full payment to the card",
+            "💰 Payment upon receipt at Nova Poshta",
+            "💳 Prepayment to the card and additional payment at the post office"
+        ],
+        nikeTitle: "Plunge into the world of Nike by opening the entire collection",
+        catalogBtn: "Go to catalog"
+    }
+};
+
+
+
+const navItems = document.querySelectorAll(".nav-bottom-categories-item")
+
+const en = document.querySelector(".en")
+const ua = document.querySelector(".ua")
+
+
+
+
+
+
+
+
 const delivery = document.querySelector('.delivery')
 const about = document.querySelector('.about')
 const modalAboutClose = document.querySelector('.modal-about-close')
@@ -98,14 +165,14 @@ var btn = document.getElementById("callRequestBtn");
 var span = document.getElementsByClassName("modal-call-request close")[0];
 
 // Когда пользователь нажимает на кнопку, показываем модальное окно
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
 
-// Когда пользователь нажимает на (x), закрываем модальное окно
-span.onclick = function() {
-  modal.style.display = "none";
-}
+// // Когда пользователь нажимает на (x), закрываем модальное окно
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
 
 // Когда пользователь кликает вне модального окна, закрываем его
 window.onclick = function(event) {
@@ -115,3 +182,52 @@ window.onclick = function(event) {
 }
 
 // class="about-overlay + show-overlay"
+
+const imgNikeTitle = document.querySelector(".img-nike-title")
+
+const catalogBtn = document.querySelector(".catalogbtn")
+
+const navTopDaysWork = document.querySelector(".nav-top-daysWork")
+
+const aboutTitle = document.querySelector(".about-title")
+
+const aboutDescription = document.querySelectorAll(".about-description")
+
+const aboutGuarantee = document.querySelector('.about-guarantee')
+
+const aboutButton = document.querySelector(".aboutButton")
+
+
+en.addEventListener("click",function(){
+    navItems[0].textContent = translations.en.home
+    navItems[1].textContent = translations.en.allProducts
+    navItems[2].textContent = translations.en.about
+    navItems[3].textContent = translations.en.delivery
+    imgNikeTitle.textContent = translations.en.nikeTitle
+    catalogBtn.textContent = translations.en.catalogBtn
+    navTopCallRequest.textContent = translations.en.callRequest
+    navTopDaysWork.textContent = translations.en.workHours
+    aboutTitle.textContent = translations.en.aboutTitle
+    aboutDescription[0].textContent = translations.en.aboutDescription
+    aboutDescription[1].textContent = translations.en.aboutDescription
+    aboutGuarantee.textContent = translations.en.aboutGuarantee
+    aboutButton.textContent = translations.en.aboutButton
+    
+})
+ua.addEventListener("click",function(){
+    navItems[0].textContent = translations.ua.home
+    navItems[1].textContent = translations.ua.allProducts
+    navItems[2].textContent = translations.ua.about
+    navItems[3].textContent = translations.ua.delivery
+    imgNikeTitle.textContent = translations.ua.nikeTitle
+    catalogBtn.textContent = translations.ua.catalogBtn
+    navTopCallRequest.textContent = translations.ua.callRequest
+    navTopDaysWork.textContent = translations.ua.workHours
+    aboutTitle.textContent = translations.ua.aboutTitle
+    aboutDescription[0].textContent = translations.ua.aboutDescription
+    aboutDescription[1].textContent = translations.ua.aboutDescription
+    aboutGuarantee.textContent = translations.ua.aboutGuarantee
+    aboutButton.textContent = translations.ua.aboutButton
+
+
+})
