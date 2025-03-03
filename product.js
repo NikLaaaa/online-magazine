@@ -1,5 +1,85 @@
+
+const translations = {
+    ua: {
+        callRequest: "Замовити дзвінок",
+        workHours: "з 10:00 до 22:00 сім днів на тиждень",
+        searchPlaceholder: "пошук",
+        home: "Головна",
+        allProducts: "Всі товари",
+        about: "Про нас",
+        delivery: "Доставка",
+        aboutGuarantee: "💥 Гарантія якості, доступні ціни, швидка доставка!",
+        aboutTitle: "Про нас",
+        requestModal: {
+            nameLabel: "Введіть ваше ім'я",
+            phoneLabel: "Введіть ваш номер телефону",
+            callText: "Ми вам зателефонуємо протягом цього дня",
+            sendButton: "Залишити заявку"
+        },
+        footer: {
+            author: "NikLaStore",
+            rights: "© 2025 NikLaStore. Всі права захищені."
+        },
+        aboutDescription: `Магазин стильних кросівок Nike – це місце, де якість, комфорт і сучасний дизайн 
+        поєднуються в ідеальній гармонії. Ми пропонуємо широкий вибір 
+        оригінальних кросівок Nike для тих, хто цінує активний спосіб життя, стиль і надійність.`,
+        aboutButton: "Замовити зараз",
+        deliveryTitle: "🚚 Доставка",
+        deliveryName: "📦 Самовивіз з Нової Пошти",
+        paymentTitle: "💳Оплата",
+        paymentOptions: [
+            "✅Повна оплата на карту",
+            "💰Оплата при отримані на Новій Пошті",
+            "💳Передоплата на карту і доплата на пошті"
+        ],
+        nikeTitle: "Поринь у світ Nike, відкриваючи всю колекцію",
+        catalogBtn: "Перейти до каталогу"
+    },
+    en: {
+        callRequest: "Request a Call",
+        workHours: "from 10:00 to 22:00 seven days a week",
+        searchPlaceholder: "search",
+        home: "Home",
+        allProducts: "All Products",
+        about: "About Us",
+        delivery: "Delivery",
+        aboutGuarantee: "💥 Quality guarantee, affordable prices, fast delivery!",
+        aboutTitle: "About Us",
+        requestModal: {
+            nameLabel: "Enter your name",
+            phoneLabel: "Enter your phone number",
+            callText: "We will call you back during the day",
+            sendButton: "Submit Request"
+        },
+        footer: {
+            author: "NikLaStore",
+            rights: "© 2025 NikLaStore. All rights reserved."
+        },
+        aboutDescription: `The Nike sneaker store is a place where quality, comfort, and modern design 
+        come together in perfect harmony. We offer a wide selection of 
+        original Nike sneakers for those who appreciate an active lifestyle, style, and reliability.`,
+        aboutButton: "Order Now",
+        deliveryTitle: "🚚 Delivery",
+        deliveryName: "📦 Pickup from Nova Poshta",
+        paymentTitle: "💳 Payment",
+        paymentOptions: [
+            "✅ Full payment to the card",
+            "💰 Payment upon receipt at Nova Poshta",
+            "💳 Prepayment to the card and additional payment at the post office"
+        ],
+        nikeTitle: "Plunge into the world of Nike by opening the entire collection",
+        catalogBtn: "Go to catalog"
+    }
+};
+
+const en = document.querySelector(".en")
+const ua = document.querySelector(".ua")
+
+
+
+
 const nameOfProducts = ['Dunk', 'Air Vapormax', 'Blazer', 'Jordan 1 Retro Mid/High', 'Air Force', 'Jordan 1 Retro Low', 'Jordan 4 Retro'];
-const pricesProduct = ['3000 грн', '4000 грн', '3900 грн', '3500 грн', '4200 грн', '4400 грн', '3700 грн'];
+const pricesProduct = ['3000 UAH', '4000 UAH', '3900 UAH', '3500 UAH', '4200 UAH', '4400 UAH', '3700 UAH'];
 const sizesProduct = ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45"];
 const delivery = document.querySelector('.delivery')
 const about = document.querySelector('.about')
@@ -167,3 +247,43 @@ burgerProduct.addEventListener("click",()=>{
         burgerLineHidden[2].style.marginTop = "0px"
     }
 })
+
+const navItems = document.querySelectorAll(".nav-bottom-categories-item")
+const navTopCallRequest = document.querySelector(".nav-top-call-request")
+const navTopDaysWork = document.querySelector(".nav-top-daysWork")
+
+en.addEventListener("click", function () {
+    navItems[0].textContent = translations.en.home;
+    navItems[1].textContent = translations.en.allProducts;
+    navItems[2].textContent = translations.en.about;
+    navItems[3].textContent = translations.en.delivery;
+
+    navTopCallRequest.textContent = translations.en.callRequest;
+    navTopDaysWork.textContent = translations.en.workHours;
+    document.querySelector(".footer-author").textContent = translations.en.footer.author;
+    document.querySelector(".footer-police").textContent = translations.en.footer.rights;
+    
+    document.querySelector(".modal-delivery-title").textContent = translations.en.deliveryTitle;
+    document.querySelector(".modal-delivery-nova").textContent = translations.en.deliveryName;
+    document.querySelector(".modal-delivery-payment").textContent = translations.ua.paymentTitle;
+
+
+});
+
+ua.addEventListener("click", function () {
+    navItems[0].textContent = translations.ua.home;
+    navItems[1].textContent = translations.ua.allProducts;
+    navItems[2].textContent = translations.ua.about;
+    navItems[3].textContent = translations.ua.delivery;
+
+    navTopCallRequest.textContent = translations.ua.callRequest;
+    navTopDaysWork.textContent = translations.ua.workHours;
+
+    document.querySelector(".footer-author").textContent = translations.ua.footer.author;
+    document.querySelector(".footer-police").textContent = translations.ua.footer.rights;
+
+    document.querySelector(".modal-delivery-title").textContent = translations.ua.deliveryTitle;
+    document.querySelector(".modal-delivery-nova").textContent = translations.ua.deliveryName;
+    document.querySelector(".modal-delivery-payment").textContent = translations.ua.paymentTitle;
+
+});
