@@ -217,50 +217,83 @@ const aboutGuarantee = document.querySelector('.about-guarantee')
 
 const aboutButton = document.querySelector(".about-button")
 
-const modalDeliveryTitle = document.querySelector(".modal-delivery-title")
+// const modalDeliveryTitle = document.querySelector(".modal-delivery-title")
 
-const modalDeliveryNova = document.querySelector(".modal-delivery-nova")
+// const modalDeliveryNova = document.querySelector(".modal-delivery-nova")
 
-const modalDeliveryPayment = document.querySelector(".modal-delivery-payment")
+// const modalDeliveryPayment = document.querySelector(".modal-delivery-payment")
 
 
 
-en.addEventListener("click",function(){
-    navItems[0].textContent = translations.en.home
-    navItems[1].textContent = translations.en.allProducts
-    navItems[2].textContent = translations.en.about
-    navItems[3].textContent = translations.en.delivery
-    imgNikeTitle.textContent = translations.en.nikeTitle
-    catalogBtn.textContent = translations.en.catalogBtn
-    navTopCallRequest.textContent = translations.en.callRequest
-    navTopDaysWork.textContent = translations.en.workHours
-    aboutTitle.textContent = translations.en.aboutTitle
-    aboutDescription[0].textContent = translations.en.aboutDescription
-    aboutDescription[1].textContent = translations.en.aboutDescription
-    aboutGuarantee.textContent = translations.en.aboutGuarantee
-    aboutButton.textContent = translations.en.aboutButton
-    modalDeliveryTitle.textContent = translations.en.deliveryTitle
-    modalDeliveryNova.textContent = translations.en.deliveryName
-    modalDeliveryPayment.textContent = translations.en.paymentTitle
+en.addEventListener("click", function () {
+    document.querySelectorAll(".nav-bottom-right-lang").forEach(el => el.classList.remove("active"));
+    en.classList.add("active");
 
+    navItems[0].textContent = translations.en.home;
+    navItems[1].textContent = translations.en.allProducts;
+    navItems[2].textContent = translations.en.about;
+    navItems[3].textContent = translations.en.delivery;
+
+    imgNikeTitle.textContent = translations.en.nikeTitle;
+    catalogBtn.textContent = translations.en.catalogBtn;
+    navTopCallRequest.textContent = translations.en.callRequest;
+    navTopDaysWork.textContent = translations.en.workHours;
+    aboutTitle.textContent = translations.en.aboutTitle;
     
-})
-ua.addEventListener("click",function(){
-    navItems[0].textContent = translations.ua.home
-    navItems[1].textContent = translations.ua.allProducts
-    navItems[2].textContent = translations.ua.about
-    navItems[3].textContent = translations.ua.delivery
-    imgNikeTitle.textContent = translations.ua.nikeTitle
-    catalogBtn.textContent = translations.ua.catalogBtn
-    navTopCallRequest.textContent = translations.ua.callRequest
-    navTopDaysWork.textContent = translations.ua.workHours
-    aboutTitle.textContent = translations.ua.aboutTitle
-    aboutDescription[0].textContent = translations.ua.aboutDescription
-    aboutDescription[1].textContent = translations.ua.aboutDescription
-    aboutGuarantee.textContent = translations.ua.aboutGuarantee
-    aboutButton.textContent = translations.ua.aboutButton
-    modalDeliveryTitle.textContent = translations.ua.deliveryTitle
-    modalDeliveryNova.textContent = translations.ua.deliveryName
+    aboutDescription[0].innerHTML = translations.en.aboutDescription;
+    aboutDescription[1].innerHTML = translations.en.aboutDescription;
+    aboutGuarantee.textContent = translations.en.aboutGuarantee;
+    aboutButton.textContent = translations.en.aboutButton;
 
+    document.querySelector(".footer-author").textContent = translations.en.footer.author;
+    document.querySelector(".footer-police").textContent = translations.en.footer.rights;
+    
+    document.querySelector(".modal-delivery-title").textContent = translations.en.deliveryTitle;
+    document.querySelector(".modal-delivery-nova").textContent = translations.en.deliveryName;
+    document.querySelector(".modal-delivery-payment").textContent = translations.en.paymentTitle;
 
-})
+    const paymentOptions = document.querySelectorAll(".modal-delivery-name");
+    translations.en.paymentOptions.forEach((text, index) => {
+        if (paymentOptions[index]) paymentOptions[index].textContent = text;
+    });
+
+    document.querySelector(".Request-modal-form-label:nth-of-type(1)").textContent = translations.en.requestModal.nameLabel;
+    document.querySelector(".Request-modal-form-label:nth-of-type(2)").textContent = translations.en.requestModal.phoneLabel;
+    document.querySelector(".Request-modal-form-call").textContent = translations.en.requestModal.callText;
+    document.querySelector(".Request-modal-form-send").textContent = translations.en.requestModal.sendButton;
+});
+
+ua.addEventListener("click", function () {
+    document.querySelectorAll(".nav-bottom-right-lang").forEach(el => el.classList.remove("active"));
+    ua.classList.add("active");
+
+    navItems[0].textContent = translations.ua.home;
+    navItems[1].textContent = translations.ua.allProducts;
+    navItems[2].textContent = translations.ua.about;
+    navItems[3].textContent = translations.ua.delivery;
+
+    imgNikeTitle.textContent = translations.ua.nikeTitle;
+    catalogBtn.textContent = translations.ua.catalogBtn;
+    navTopCallRequest.textContent = translations.ua.callRequest;
+    navTopDaysWork.textContent = translations.ua.workHours;
+    aboutTitle.textContent = translations.ua.aboutTitle;
+
+    aboutDescription[0].innerHTML = translations.ua.aboutDescription;
+    aboutDescription[1].innerHTML = translations.ua.aboutDescription;
+    aboutGuarantee.textContent = translations.ua.aboutGuarantee;
+    aboutButton.textContent = translations.ua.aboutButton;
+
+    document.querySelector(".modal-delivery-title").textContent = translations.ua.deliveryTitle;
+    document.querySelector(".modal-delivery-nova").textContent = translations.ua.deliveryName;
+    document.querySelector(".modal-delivery-payment").textContent = translations.ua.paymentTitle;
+
+    const paymentOptions = document.querySelectorAll(".modal-delivery-name");
+    translations.ua.paymentOptions.forEach((text, index) => {
+        if (paymentOptions[index]) paymentOptions[index].textContent = text;
+    });
+
+    document.querySelector(".Request-modal-form-label:nth-of-type(1)").textContent = translations.ua.requestModal.nameLabel;
+    document.querySelector(".Request-modal-form-label:nth-of-type(2)").textContent = translations.ua.requestModal.phoneLabel;
+    document.querySelector(".Request-modal-form-call").textContent = translations.ua.requestModal.callText;
+    document.querySelector(".Request-modal-form-send").textContent = translations.ua.requestModal.sendButton;
+});
