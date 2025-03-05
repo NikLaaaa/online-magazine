@@ -1,4 +1,3 @@
-
 const translations = {
     ua: {
         callRequest: "Замовити дзвінок",
@@ -8,32 +7,23 @@ const translations = {
         allProducts: "Всі товари",
         about: "Про нас",
         delivery: "Доставка",
-        aboutGuarantee: "💥 Гарантія якості, доступні ціни, швидка доставка!",
         aboutTitle: "Про нас",
-        requestModal: {
-            nameLabel: "Введіть ваше ім'я",
-            phoneLabel: "Введіть ваш номер телефону",
-            callText: "Ми вам зателефонуємо протягом цього дня",
-            sendButton: "Залишити заявку"
-        },
-        footer: {
-            author: "NikLaStore",
-            rights: "© 2025 NikLaStore. Всі права захищені."
-        },
         aboutDescription: `Магазин стильних кросівок Nike – це місце, де якість, комфорт і сучасний дизайн 
         поєднуються в ідеальній гармонії. Ми пропонуємо широкий вибір 
         оригінальних кросівок Nike для тих, хто цінує активний спосіб життя, стиль і надійність.`,
+        aboutDescription2: `У нас ви знайдете як класичні моделі, що стали легендами, так і найновіші колекції, які підкорюють світ моди та спорту.`,
         aboutButton: "Замовити зараз",
         deliveryTitle: "🚚 Доставка",
         deliveryName: "📦 Самовивіз з Нової Пошти",
-        paymentTitle: "💳Оплата",
+        deliveryPayment: "💳 Оплата",
         paymentOptions: [
-            "✅Повна оплата на карту",
-            "💰Оплата при отримані на Новій Пошті",
-            "💳Передоплата на карту і доплата на пошті"
+            "✅ Повна оплата на карту",
+            "💰 Оплата при отриманні на Новій Пошті",
+            "💳 Передоплата на карту і доплата на пошті"
         ],
         nikeTitle: "Поринь у світ Nike, відкриваючи всю колекцію",
-        catalogBtn: "Перейти до каталогу"
+        catalogBtn: "Перейти до каталогу",
+        sizeSelectorTitle: "Виберіть розмір кросівок"
     },
     en: {
         callRequest: "Request a Call",
@@ -43,40 +33,29 @@ const translations = {
         allProducts: "All Products",
         about: "About Us",
         delivery: "Delivery",
-        aboutGuarantee: "💥 Quality guarantee, affordable prices, fast delivery!",
         aboutTitle: "About Us",
-        requestModal: {
-            nameLabel: "Enter your name",
-            phoneLabel: "Enter your phone number",
-            callText: "We will call you back during the day",
-            sendButton: "Submit Request"
-        },
-        footer: {
-            author: "NikLaStore",
-            rights: "© 2025 NikLaStore. All rights reserved."
-        },
         aboutDescription: `The Nike sneaker store is a place where quality, comfort, and modern design 
         come together in perfect harmony. We offer a wide selection of 
         original Nike sneakers for those who appreciate an active lifestyle, style, and reliability.`,
+        aboutDescription2: `Here you will find both classic models that have become legends, as well as the latest collections that are conquering the world of fashion and sports.`,
         aboutButton: "Order Now",
         deliveryTitle: "🚚 Delivery",
         deliveryName: "📦 Pickup from Nova Poshta",
-        paymentTitle: "💳 Payment",
+        deliveryPayment: "💳 Payment",
         paymentOptions: [
             "✅ Full payment to the card",
             "💰 Payment upon receipt at Nova Poshta",
             "💳 Prepayment to the card and additional payment at the post office"
         ],
         nikeTitle: "Plunge into the world of Nike by opening the entire collection",
-        catalogBtn: "Go to catalog"
+        catalogBtn: "Go to catalog",
+        sizeSelectorTitle: "Select size of sneakers"
     }
 };
 
+
 const en = document.querySelector(".en")
 const ua = document.querySelector(".ua")
-
-
-
 
 const nameOfProducts = ['Dunk', 'Air Vapormax', 'Blazer', 'Jordan 1 Retro Mid/High', 'Air Force', 'Jordan 1 Retro Low', 'Jordan 4 Retro'];
 const pricesProduct = ['3000 UAH', '4000 UAH', '3900 UAH', '3500 UAH', '4200 UAH', '4400 UAH', '3700 UAH'];
@@ -128,7 +107,7 @@ const CategoryOfShoes = document.querySelector(".CategoryOfShoes");
 const searchInfo = document.querySelector('.search-data');
 const navBottomCenterSearch = document.querySelector(".nav-bottom-center-search");
 
-navBottomCenterSearch.addEventListener('focus', ()=>{
+navBottomCenterSearch.addEventListener('focus', ()=> {
     searchInfo.classList.add('show-search-data')
 });
 function renderProducts(products = nameOfProducts) {
@@ -146,7 +125,7 @@ function renderProducts(products = nameOfProducts) {
 }
 
 renderProducts(); 
-document.addEventListener('click', ()=>{
+document.addEventListener('click', ()=> {
     searchInfo.classList.remove('show-search-data')
     if(navBottomCenterSearch.value == ''){
         renderProducts(); 
@@ -191,7 +170,6 @@ const search = _.debounce(() => {
     
     if (searchData === '') {
         renderProducts(); 
-
     }
 
     nameOfProducts.forEach((element, index) => {
@@ -231,7 +209,7 @@ function enterSearchData() {
 
 // burger 
 let hiddenBurgerCount = 1
-burgerProduct.addEventListener("click",()=>{
+burgerProduct.addEventListener("click",()=> {
     hiddenBurgerCount ++
     navHiddenProduct.classList.toggle("nav-active")
     if(hiddenBurgerCount%2==0){
@@ -248,9 +226,24 @@ burgerProduct.addEventListener("click",()=>{
     }
 })
 
-const navItems = document.querySelectorAll(".nav-bottom-categories-item")
-const navTopCallRequest = document.querySelector(".nav-top-call-request")
-const navTopDaysWork = document.querySelector(".nav-top-daysWork")
+
+
+const navItems = document.querySelectorAll(".nav-bottom-categories-item");
+const navTopCallRequest = document.querySelector(".nav-top-call-request");
+const navTopDaysWork = document.querySelector(".nav-top-daysWork");
+const searchInput = document.querySelector(".nav-bottom-center-search");
+const aboutTitle = document.querySelector(".about-title");
+const aboutDescription = document.querySelectorAll(".about-description");
+const aboutDescription2 = document.querySelectorAll(".about-description2");
+const aboutButton = document.querySelector(".about-button");
+const aboutGuarantee = document.querySelector(".about-guarantee");
+const deliveryTitle = document.querySelector(".modal-delivery-title");
+const deliveryName = document.querySelectorAll(".modal-delivery-name");
+const deliveryList = document.querySelector(".modal-delivery-list");
+const paymentOptions = document.querySelectorAll(".modal-delivery-name");
+const nikeTitle = document.querySelector(".nike-title");
+const catalogBtn = document.querySelector(".catalog-btn");
+const sizeSelectorTitle = document.querySelector(".shoe-size");
 
 en.addEventListener("click", function () {
     navItems[0].textContent = translations.en.home;
@@ -260,14 +253,25 @@ en.addEventListener("click", function () {
 
     navTopCallRequest.textContent = translations.en.callRequest;
     navTopDaysWork.textContent = translations.en.workHours;
-    document.querySelector(".footer-author").textContent = translations.en.footer.author;
-    document.querySelector(".footer-police").textContent = translations.en.footer.rights;
-    
-    document.querySelector(".modal-delivery-title").textContent = translations.en.deliveryTitle;
-    document.querySelector(".modal-delivery-nova").textContent = translations.en.deliveryName;
-    document.querySelector(".modal-delivery-payment").textContent = translations.ua.paymentTitle;
+    searchInput.placeholder = translations.en.searchPlaceholder;
 
+    aboutTitle.textContent = translations.en.aboutTitle;
+    aboutDescription[0].textContent = translations.en.aboutDescription;
+    aboutDescription2[0].textContent = translations.en.aboutDescription2;
+    aboutButton.textContent = translations.en.aboutButton;
 
+    aboutGuarantee.textContent = translations.en.aboutGuarantee;
+
+    deliveryTitle.textContent = translations.en.deliveryTitle;
+    deliveryName[0].textContent = translations.en.deliveryName;
+    deliveryList.textContent = translations.en.deliveryPayment;
+    paymentOptions[0].textContent = translations.en.paymentOptions[0];
+    paymentOptions[1].textContent = translations.en.paymentOptions[1];
+    paymentOptions[2].textContent = translations.en.paymentOptions[2];
+
+    nikeTitle.textContent = translations.en.nikeTitle;
+    catalogBtn.textContent = translations.en.catalogBtn;
+    sizeSelectorTitle.textContent = translations.en.sizeSelectorTitle;
 });
 
 ua.addEventListener("click", function () {
@@ -278,12 +282,26 @@ ua.addEventListener("click", function () {
 
     navTopCallRequest.textContent = translations.ua.callRequest;
     navTopDaysWork.textContent = translations.ua.workHours;
+    searchInput.placeholder = translations.ua.searchPlaceholder;
 
-    document.querySelector(".footer-author").textContent = translations.ua.footer.author;
-    document.querySelector(".footer-police").textContent = translations.ua.footer.rights;
+    aboutTitle.textContent = translations.ua.aboutTitle;
+    aboutDescription[0].textContent = translations.ua.aboutDescription;
+    aboutDescription2[0].textContent = translations.ua.aboutDescription2;
+    aboutButton.textContent = translations.ua.aboutButton;
 
-    document.querySelector(".modal-delivery-title").textContent = translations.ua.deliveryTitle;
-    document.querySelector(".modal-delivery-nova").textContent = translations.ua.deliveryName;
-    document.querySelector(".modal-delivery-payment").textContent = translations.ua.paymentTitle;
+    aboutGuarantee.textContent = translations.ua.aboutGuarantee;
 
+    deliveryTitle.textContent = translations.ua.deliveryTitle;
+    deliveryName[0].textContent = translations.ua.deliveryName;
+    deliveryList.textContent = translations.ua.deliveryPayment;
+    paymentOptions[0].textContent = translations.ua.paymentOptions[0];
+    paymentOptions[1].textContent = translations.ua.paymentOptions[1];
+    paymentOptions[2].textContent = translations.ua.paymentOptions[2];
+
+    nikeTitle.textContent = translations.ua.nikeTitle;
+    catalogBtn.textContent = translations.ua.catalogBtn;
+    sizeSelectorTitle.textContent = translations.ua.sizeSelectorTitle;
 });
+
+en.addEventListener("click", () => updateText("en"));
+ua.addEventListener("click", () => updateText("ua"));

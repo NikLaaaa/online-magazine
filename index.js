@@ -19,6 +19,7 @@ const translations = {
             author: "NikLaStore",
             rights: "© 2025 NikLaStore. Всі права захищені."
         },
+        burgerMenu: ["Головна", "Всі товари", "Про нас", "Доставка"],
         aboutDescription: `Магазин стильних кросівок Nike – це місце, де якість, комфорт і сучасний дизайн 
         поєднуються в ідеальній гармонії. Ми пропонуємо широкий вибір 
         оригінальних кросівок Nike для тих, хто цінує активний спосіб життя, стиль і надійність.`,
@@ -54,9 +55,12 @@ const translations = {
             author: "NikLaStore",
             rights: "© 2025 NikLaStore. All rights reserved."
         },
-        aboutDescription: `The Nike sneaker store is a place where quality, comfort, and modern design 
+        burgerMenu: ["Home", "All Products", "About Us", "Delivery"],
+        aboutDescription1: `The Nike sneaker store is a place where quality, comfort, and modern design 
         come together in perfect harmony. We offer a wide selection of 
         original Nike sneakers for those who appreciate an active lifestyle, style, and reliability.`,
+        aboutDescription2: `Here you will find both classic models that have become legends and the newest collections 
+        that are conquering the world of fashion and sport.`,
         aboutButton: "Order Now",
         deliveryTitle: "🚚 Delivery",
         deliveryName: "📦 Pickup from Nova Poshta",
@@ -217,11 +221,11 @@ const aboutGuarantee = document.querySelector('.about-guarantee')
 
 const aboutButton = document.querySelector(".about-button")
 
-// const modalDeliveryTitle = document.querySelector(".modal-delivery-title")
+const modalDeliveryTitle = document.querySelector(".modal-delivery-title")
 
-// const modalDeliveryNova = document.querySelector(".modal-delivery-nova")
+const modalDeliveryNova = document.querySelector(".modal-delivery-nova")
 
-// const modalDeliveryPayment = document.querySelector(".modal-delivery-payment")
+const modalDeliveryPayment = document.querySelector(".modal-delivery-payment")
 
 
 
@@ -240,8 +244,8 @@ en.addEventListener("click", function () {
     navTopDaysWork.textContent = translations.en.workHours;
     aboutTitle.textContent = translations.en.aboutTitle;
     
-    aboutDescription[0].innerHTML = translations.en.aboutDescription;
-    aboutDescription[1].innerHTML = translations.en.aboutDescription;
+    aboutDescription[0].innerHTML = translations.en.aboutDescription1;  // Для первого абзаца
+    aboutDescription[1].innerHTML = translations.en.aboutDescription2;  // Для второго абзаца    
     aboutGuarantee.textContent = translations.en.aboutGuarantee;
     aboutButton.textContent = translations.en.aboutButton;
 
@@ -261,6 +265,10 @@ en.addEventListener("click", function () {
     document.querySelector(".Request-modal-form-label:nth-of-type(2)").textContent = translations.en.requestModal.phoneLabel;
     document.querySelector(".Request-modal-form-call").textContent = translations.en.requestModal.callText;
     document.querySelector(".Request-modal-form-send").textContent = translations.en.requestModal.sendButton;
+
+    document.querySelectorAll(".nav-hidden-list li").forEach((el, index) => {
+        el.textContent = translations.en.burgerMenu[index];
+    });
 });
 
 ua.addEventListener("click", function () {
@@ -283,17 +291,7 @@ ua.addEventListener("click", function () {
     aboutGuarantee.textContent = translations.ua.aboutGuarantee;
     aboutButton.textContent = translations.ua.aboutButton;
 
-    document.querySelector(".modal-delivery-title").textContent = translations.ua.deliveryTitle;
-    document.querySelector(".modal-delivery-nova").textContent = translations.ua.deliveryName;
-    document.querySelector(".modal-delivery-payment").textContent = translations.ua.paymentTitle;
-
-    const paymentOptions = document.querySelectorAll(".modal-delivery-name");
-    translations.ua.paymentOptions.forEach((text, index) => {
-        if (paymentOptions[index]) paymentOptions[index].textContent = text;
+    document.querySelectorAll(".nav-hidden-list li").forEach((el, index) => {
+        el.textContent = translations.ua.burgerMenu[index];
     });
-
-    document.querySelector(".Request-modal-form-label:nth-of-type(1)").textContent = translations.ua.requestModal.nameLabel;
-    document.querySelector(".Request-modal-form-label:nth-of-type(2)").textContent = translations.ua.requestModal.phoneLabel;
-    document.querySelector(".Request-modal-form-call").textContent = translations.ua.requestModal.callText;
-    document.querySelector(".Request-modal-form-send").textContent = translations.ua.requestModal.sendButton;
 });

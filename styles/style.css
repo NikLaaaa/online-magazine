@@ -194,8 +194,47 @@ body {
     transition: all 0.3s ease;
     position: relative;
 }
+/* Основной контейнер для переключателя языков */
+/* Общие стили для переключателя языка */
+/* Общий стиль для блока переключения языка */
 .nav-bottom-right-lang {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
+
+/* Стиль для украинского языка */
+.nav-bottom-right-lang.ua {
+  background-color: #005baa; /* Темно-синий */
+  color: white;
+
+}
+
+.nav-bottom-right-lang.ua:hover {
+  background-color: #003f8a; /* Немного темнее при наведении */
+  transform: scale(1.05);
+}
+
+/* Стиль для английского языка */
+.nav-bottom-right-lang.en {
+  background-color: #d4af37; /* Золотой */
+  color: black;
+}
+
+.nav-bottom-right-lang.en:hover {
+  background-color: #b8942d; /* Немного темнее при наведении */
+  transform: scale(1.05);
+}
+
+/* Активный язык с выделением */
+.nav-bottom-right-lang.active {
+  border: 2px solid #ffcc00; /* Яркое выделение для активного языка */
+}
+
+
+
 .nav-bottom-categories {
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -286,7 +325,7 @@ body {
 
 .imgnike{
     background: url(/src/img/nike.png) no-repeat right/1000px 700px;
-    height: 900px;
+    height: 850px;
     width: 100%;
 }
 .imgnike-logo{
@@ -294,8 +333,11 @@ body {
 
 }
 .img-nike-title {
-    font-family: 'Poppins', sans-serif;
-    font-size:54px;
+  font-family: 'Montserrat', sans-serif;
+    font-size:44px;
+    font-weight: bold;
+  letter-spacing: 1px; /* Увеличим межбуквенный интервал для четкости */
+  
 }
 .catalogbtn {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
